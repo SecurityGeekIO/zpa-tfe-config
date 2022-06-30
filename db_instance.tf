@@ -16,11 +16,12 @@ resource "aws_db_instance" "km_db" {
     engine_version = "10.6"
     instance_class = "db.t3.medium"
     storage_type = "gp2"
-    # backup_retention_period = "35"
-    # storage_encrypted = true
+    backup_retention_period = "35"
+    storage_encrypted = false
 }
 
 
-
+#zs:skip=ZS-AWS-00032 Ignore for Testing
+#zs:skip=ZS-AWS-00013 Ignore for Testing
 # Ensure that backup retention is enabled for RDS Instances (HIGH)ZS-AWS-00032
 # Ensure that encryption is enabled for RDS PostgreSQL Instances (HIGH)ZS-AWS-00013

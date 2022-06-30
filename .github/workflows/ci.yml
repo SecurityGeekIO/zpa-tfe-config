@@ -1,12 +1,9 @@
 name: Zscanner IAC Scan
 on:
   push:
-    branches:
-      - master
-      - develop
+    branches: [ $default-branch, $protected-branches ]
   pull_request:
-  schedule:
-    - cron: '0 0 1 * *'
+    branches: [ $default-branch ]
 
 jobs:
   zscaler-iac-scan:
@@ -23,6 +20,7 @@ jobs:
           region : 'US'
           iac_dir : '../../'
           iac_file : '../../'
+          output_format : 'human+github-sarif'
           # output_format : 'json/yaml/sarif/human/json+github-sarif/human+github-sarif'
           fail_build : 'false'
       - name: Upload SARIF file

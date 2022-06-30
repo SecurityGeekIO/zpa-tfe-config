@@ -2,7 +2,7 @@ name: Zscanner IAC Scan
 on:
   push:
     branches:
-      - master
+      - main
       - develop
   pull_request:
   schedule:

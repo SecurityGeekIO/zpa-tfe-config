@@ -1,4 +1,6 @@
 resource "aws_s3_bucket" "b" {
+  #zs:skip=ZS-AWS-00026 Ignore for Testing
+  #zs:skip=ZS-AWS-00034 Ignore for Testing
   bucket_prefix = var.bucket_prefix
   acl    = var.acl
 versioning {

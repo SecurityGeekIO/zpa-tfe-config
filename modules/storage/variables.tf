@@ -6,12 +6,12 @@ variable "bucket_prefix" {
 variable "acl" {
     type        = string
     description = "(Optional) The canned ACL to apply. Defaults to private. Conflicts with grant."
-    default     = "private"
+    default     = "public"
 }
 variable "versioning" {
     type        = bool
     description = "(Optional) A state of versioning."
-    default     = true
+    default     = false
 }
 variable "target_bucket" {
     type        = string

@@ -16,7 +16,7 @@ resource "aws_db_instance" "km_db" {
     instance_class = "db.t3.medium"
     storage_type = "gp2"
     backup_retention_period = "35"
-    storage_encrypted = false
+    storage_encrypted = true
 }
 
 

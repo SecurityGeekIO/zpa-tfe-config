@@ -6,13 +6,20 @@ variable "bucket_prefix" {
 variable "acl" {
     type        = string
     description = "(Optional) The canned ACL to apply. Defaults to private. Conflicts with grant."
-    default     = "public"
+    default     = "private"
 }
 variable "versioning" {
     type        = bool
     description = "(Optional) A state of versioning."
-    default     = false
+    default     = true
 }
+
+variable "mfa_delete" {
+    type        = bool
+    description = "(Optional) If MFA Delete is enabled."
+    default     = true
+}
+
 variable "target_bucket" {
     type        = string
     description = "(Required) The name of the bucket that will receive the log objects."

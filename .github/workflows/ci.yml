@@ -1,12 +1,9 @@
 name: Zscanner IAC Scan
 on:
   push:
-    branches:
-      - main
-      - develop
+    branches: [ $default-branch, $protected-branches ]
   pull_request:
-  schedule:
-    - cron: '0 0 1 * *'
+    branches: [ $default-branch ]
 
 jobs:
   zscaler-iac-scan:

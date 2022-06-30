@@ -3,6 +3,7 @@ resource "aws_s3_bucket" "b" {
   #zs:skip=ZS-AWS-00034 Ignore for Testing
   bucket_prefix = var.bucket_prefix
   acl    = var.acl
+  mfa_delete = var.mfa_delete
 versioning {
         enabled = var.versioning
     }

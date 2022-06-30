@@ -21,12 +21,12 @@ jobs:
           client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
           client_secret : ${{ secrets.ZSCANNER_CLIENT_SECRET }}
           region : 'US'
-          iac_dir : './'
-          iac_file : './'
+          # iac_dir : './'
+          # iac_file : './'
           output_format : 'json/yaml/sarif/human/json+github-sarif/human+github-sarif'
           fail_build : 'false'
       - name: Upload SARIF file
         if: ${{ success() || failure() && (steps.zscaler-iac-scan.outputs.sarif_file_path != '') }}
-        uses: github/codeql-action/upload-sarif@v1
+        uses: github/codeql-action/upload-sarif@v2
         with:
           sarif_file: ${{ steps.zscaler-iac-scan.outputs.sarif_file_path }}

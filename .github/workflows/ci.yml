@@ -21,8 +21,8 @@ jobs:
           client_id : ${{ secrets.ZSCANNER_CLIENT_ID }}
           client_secret : ${{ secrets.ZSCANNER_CLIENT_SECRET }}
           region : 'US'
-          # iac_dir : './'
-          # iac_file : './'
+          iac_dir : '../../'
+          iac_file : '../../'
           output_format : 'json/yaml/sarif/human/json+github-sarif/human+github-sarif'
           fail_build : 'false'
       - name: Upload SARIF file
